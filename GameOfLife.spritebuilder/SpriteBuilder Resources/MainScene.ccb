@@ -471,7 +471,7 @@
 				<key>displayName</key>
 				<string>CCBFile</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_grid</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -520,6 +520,8 @@
 						<string>Grid.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1867,8 +1869,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -2490,7 +2490,7 @@
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>128</real>
+			<real>32</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
 			<key>soundChannel</key>
