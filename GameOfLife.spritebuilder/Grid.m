@@ -28,6 +28,7 @@ static const int GRID_COLUMNS = 10;
 }
 - (void)setupGrid
 {
+    printf("setupGrid called");
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
@@ -61,6 +62,7 @@ static const int GRID_COLUMNS = 10;
         
         y += _cellHeight;
     }
+    printf("_gridArray count === [%d] --- _gridArray[] count === [%d]",_gridArray count, _gridArray[0] count)
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
