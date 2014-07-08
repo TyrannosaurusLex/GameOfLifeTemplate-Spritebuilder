@@ -62,7 +62,7 @@ static const int GRID_COLUMNS = 10;
         
         y += _cellHeight;
     }
-    printf("_gridArray count === [%d] --- _gridArray[] count === [%d]",_gridArray count, _gridArray[0] count);
+    printf("_gridArray count === [%d] --- _gridArray[] count === [%d]",(_gridArray count), (_gridArray[0] count));
 }
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
