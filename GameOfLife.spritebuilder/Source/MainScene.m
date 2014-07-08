@@ -13,11 +13,13 @@
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
     CCLabelTTF *_populationLabel;
+    int seqno;
 }
 
 - (id)init
 {
     self = [super init];
+    seqno = 0;
     
     if (self) {
         _timer = [[CCTimer alloc] init];
@@ -43,7 +45,7 @@
 // this method will get called every half second when you hit the play button and will stop getting called when you hit the pause button
 - (void)step
 {
-    printf(" step called \n ");
+    printf(" step called [%d]\n", seqno);
     
     [_grid evolveStep];
    // _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
