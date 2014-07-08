@@ -131,18 +131,18 @@ static const int GRID_COLUMNS = 10;
     }
 }
 -(void)updateCreatures{
-    printf("updateCreatures called");
+    printf("updateCreatures called \n");
     for (int i = 0;i < [_gridArray count]; i++){
         for (int j =0; j < [_gridArray[i]count]; j++){
             Creature *currentCreature = _gridArray[i][j];
-            printf("currentCreature.livingNeighbors@ [%d][%d] == [%d]",i,j,currentCreature.livingNeighbors);
+            printf("currentCreature.livingNeighbors@ [%d][%d] == [%d \n]",i,j,currentCreature.livingNeighbors);
             if ( currentCreature.livingNeighbors == 3){
                 currentCreature.isAlive = true;
-                printf("currentCreature.isAlive set to true");
+                printf("currentCreature.isAlive set to true \n");
             }
             else if ( currentCreature.livingNeighbors >= 1 || currentCreature.livingNeighbors <= 4){
                 currentCreature.isAlive = false;
-                printf("currentCreature.isAlive set to false");
+                printf("currentCreature.isAlive set to false \n");
             }
         }
     }
