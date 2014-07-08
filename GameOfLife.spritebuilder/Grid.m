@@ -137,10 +137,11 @@ static const int GRID_COLUMNS = 10;
             
             if ( currentCreature.livingNeighbors == 3){
                 currentCreature.isAlive = true;
-                    printf(currentCreature.isAlive set to true")
+                    printf("currentCreature.isAlive set to true")
             }
             else if ( currentCreature.livingNeighbors >= 1 || currentCreature.livingNeighbors <= 4){
                 currentCreature.isAlive = false;
+                printf("currentCreature.isAlive set to false");
             }
         }
     }
