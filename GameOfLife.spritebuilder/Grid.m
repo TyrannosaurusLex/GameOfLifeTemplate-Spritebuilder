@@ -130,6 +130,7 @@ static const int GRID_COLUMNS = 10;
     }
 }
 -(void)updateCreatures{
+    printf("updateCreatures called");
     for (int i = 0;i < [_gridArray count]; i++){
         for (int j =0; j < [_gridArray[i]count]; j++){
             Creature *currentCreature = _gridArray[i][j];
