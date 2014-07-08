@@ -29,6 +29,7 @@
 - (void)play
 {
     printf(" play called ");
+    [_grid evolveStep];
     //this tells the game to call a method called 'step' every half second.
     [self schedule:@selector(step) interval:0.5f];
 }
@@ -44,7 +45,7 @@
 {
     printf(" step called ");
     
-    [_grid]evolveStep];
+    [_grid evolveStep];
    // _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
    // _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
 }
