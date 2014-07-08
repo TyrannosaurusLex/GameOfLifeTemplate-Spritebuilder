@@ -23,6 +23,7 @@
     
     if (self) {
         _timer = [[CCTimer alloc] init];
+        // XXX - why did I have to add this?  is this correct?
         _grid = [[Grid alloc] init];
     }
     
