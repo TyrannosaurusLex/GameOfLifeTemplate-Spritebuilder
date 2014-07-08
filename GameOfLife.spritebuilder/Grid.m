@@ -135,10 +135,13 @@ static const int GRID_COLUMNS = 10;
         for (int j =0; j < [_gridArray[i]count]; j++){
             Creature *currentCreature = _gridArray[i][j];
             
-            if ( currentCreature.livingNeighbors == 3)
+            if ( currentCreature.livingNeighbors == 3){
                 currentCreature.isAlive = true;
-            else if ( currentCreature.livingNeighbors >= 1 || currentCreature.livingNeighbors <= 4)
+                    printf(currentCreature.isAlive set to true")
+            }
+            else if ( currentCreature.livingNeighbors >= 1 || currentCreature.livingNeighbors <= 4){
                 currentCreature.isAlive = false;
+            }
         }
     }
 }
