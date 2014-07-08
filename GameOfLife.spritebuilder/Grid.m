@@ -82,13 +82,13 @@ static const int GRID_COLUMNS = 10;
 -(void)evolveStep{
     //update each Creature's neighbor count
     printf("evolveStep called");
-    [self countNeighbors];
+  //  [self countNeighbors];
     
     //update each Creature's state
-    [self updateCreatures];
+    //[self updateCreatures];
     
     //update the generation so the label's text will display the correct generation
-    _generation++;
+   // _generation++;
 }
 -(void)countNeighbors{
     // iterate through the rows

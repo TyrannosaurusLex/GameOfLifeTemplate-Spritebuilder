@@ -28,21 +28,22 @@
 
 - (void)play
 {
-    printf("play called");
+    printf(" play called ");
     //this tells the game to call a method called 'step' every half second.
     [self schedule:@selector(step) interval:0.5f];
 }
 
 - (void)pause
 {
-    printf("pause called");
+    printf(" pause called ");
     [self unschedule:@selector(step)];
 }
 
-// this method will get called every half second when you hit the play button and will stop getting called when you hi the pause button
+// this method will get called every half second when you hit the play button and will stop getting called when you hit the pause button
 - (void)step
 {
-    printf("step called");
+    printf(" step called ");
+    
     [_grid evolveStep];
     _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
     _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
