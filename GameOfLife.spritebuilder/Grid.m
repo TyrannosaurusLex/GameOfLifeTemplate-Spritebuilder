@@ -133,7 +133,9 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures{
     printf("updateCreatures called \n");
     for (int i = 0;i < [_gridArray count]; i++){
+        printf("entered outer loop @[%d]",i);
         for (int j =0; j < [_gridArray[i]count]; j++){
+            printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
             printf("currentCreature.livingNeighbors@ [%d][%d] == [%d \n]",i,j,currentCreature.livingNeighbors);
             if ( currentCreature.livingNeighbors == 3){
