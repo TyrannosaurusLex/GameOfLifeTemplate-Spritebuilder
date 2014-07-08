@@ -46,7 +46,7 @@
 - (void)step
 {
     printf(" step called [%d]\n", seqno);
-    
+    ++seqno;
     [_grid evolveStep];
    // _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
    // _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
