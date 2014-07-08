@@ -131,7 +131,7 @@ static const int GRID_COLUMNS = 10;
     }
 }
 -(void)updateCreatures{
-    printf("updateCreatures called --- _gridArray count == [%d] \n",_gridArray count);
+    printf("updateCreatures called --- _gridArray count == [%d] \n",(_gridArray count));
     for (int i = 0;i < [_gridArray count]; i++){
         printf("entered outer loop @[%d]",i);
         for (int j =0; j < [_gridArray[i] count]; j++){
