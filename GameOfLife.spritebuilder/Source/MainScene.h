@@ -9,5 +9,8 @@
 #import "CCNode.h"
 
 @interface MainScene : CCNode
-
+-(id)init   
+-(void)play;
+-(void)pause;
+-(void)step;
 @end
