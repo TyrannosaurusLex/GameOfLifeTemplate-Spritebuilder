@@ -81,7 +81,7 @@ static const int GRID_COLUMNS = 10;
 }
 -(void)evolveStep{
     //update each Creature's neighbor count
-    printf("evolveStep called");
+    printf("evolveStep called \n");
     [self countNeighbors];
     
     //update each Creature's state
