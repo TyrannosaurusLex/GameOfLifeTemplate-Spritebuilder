@@ -125,6 +125,7 @@ static const int GRID_COLUMNS = 10;
                 // go through the column to the left of the current cell, the column the cell is in, and the column to the right of the current cell
                 for (int y = (j-1); y <= (j+1); y++)
                 {
+                    printf("countNeighbors inner-innerloop at x: [%d] y: [%d]",x,y);
                     // check that the cell we're checking isn't off the screen
                     BOOL isIndexValid;
                     isIndexValid = [self isIndexValidForX:x andY:y];
