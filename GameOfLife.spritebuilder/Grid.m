@@ -97,10 +97,10 @@ static const int GRID_COLUMNS = 10;
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
     printf("countNeighbors called --- _gridArray count == [%d]\n", _gridArray.count);
-    for (int i = 0; i < [_gridArray count]; i++)
+    for (int i = 0; i < GRID_ROWS; i++)
     {
         // iterate through all the columns for a given row
-        for (int j = 0; j < [_gridArray[i] count]; j++)
+        for (int j = 0; j < GRID_COLUMNS; j++)
         {
             // access the creature in the cell that corresponds to the current row/column
             Creature *currentCreature = _gridArray[i][j];
@@ -136,9 +136,9 @@ static const int GRID_COLUMNS = 10;
 }
 -(void)updateCreatures{
     printf("updateCreatures called --- _gridArray count == [%d] \n",(_gridArray.count));
-    for (int i = 0;i < [_gridArray count]; i++){
+    for (int i = 0;i < GRID_ROWS; i++){
         printf("entered outer loop @[%d]",i);
-        for (int j =0; j < [_gridArray[i] count]; j++){
+        for (int j =0; j < GRID_COLUMNS; j++){
             printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
             printf("currentCreature.livingNeighbors@ [%d][%d] == [%d \n]",i,j,currentCreature.livingNeighbors);
