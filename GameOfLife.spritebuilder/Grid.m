@@ -27,7 +27,7 @@ static const int GRID_COLUMNS = 10;
     float _cellHeight;
 }
 -(void)onEnter{
-    printf("onEnter Called \n");
+    printf("Grid::onEnter Called \n");
     [super onEnter];
     [self setupGrid];
     printf("_gridArray = [%p]\n",_gridArray);
@@ -36,7 +36,7 @@ static const int GRID_COLUMNS = 10;
 }
 - (void)setupGrid
 {
-    printf("setupGrid called \n");
+    printf("Grid::setupGrid called \n");
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
@@ -91,7 +91,7 @@ static const int GRID_COLUMNS = 10;
 }
 -(void)evolveStep{
     //update each Creature's neighbor count
-    printf("evolveStep called \n");
+    printf("Grid::evolveStep called \n");
     [self countNeighbors];
     
     //update each Creature's state
@@ -103,13 +103,13 @@ static const int GRID_COLUMNS = 10;
 -(void)countNeighbors{
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
-    printf("countNeighbors called --- _gridArray count == [%d]\n", _gridArray.count);
+    printf("Grid::countNeighbors called --- _gridArray count == [%d]\n", _gridArray.count);
     for (int i = 0; i < GRID_ROWS; i++)
     {
         // iterate through all the columns for a given row
         for (int j = 0; j < GRID_COLUMNS; j++)
         {
-            printf("countNeighbors innerloop at i: [%d] j: [%d]\n",i,j);
+            printf("Grid::countNeighbors innerloop at i: [%d] j: [%d]\n",i,j);
             // access the creature in the cell that corresponds to the current row/column
             Creature *currentCreature = _gridArray[i][j];
             
@@ -124,7 +124,7 @@ static const int GRID_COLUMNS = 10;
                 // go through the column to the left of the current cell, the column the cell is in, and the column to the right of the current cell
                 for (int y = (j-1); y <= (j+1); y++)
                 {
-                    printf("countNeighbors inner-innerloop at x: [%d] y: [%d] \n",x,y);
+                    printf("Grid::countNeighbors inner-innerloop at x: [%d] y: [%d] \n",x,y);
                     // check that the cell we're checking isn't off the screen
                     BOOL isIndexValid;
                     isIndexValid = [self isIndexValidForX:x andY:y];
@@ -133,13 +133,13 @@ static const int GRID_COLUMNS = 10;
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
-                        printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
+                        printf("Grid::countNeighbors -    !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
                         if (neighbor.isAlive)
                         {
                             //neighbor.isAlive doesn't work, but needs to, to meet the above condition
                             currentCreature.livingNeighbors += 1;
                             if(currentCreature.livingNeighbors != 0){
-                                printf("<><><><><><><><><><>currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]\n",x,y,currentCreature.livingNeighbors);
+                                printf("Grid::countNeighbrs - currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]\n",x,y,currentCreature.livingNeighbors);
                             }
                         }
                     }
@@ -149,20 +149,20 @@ static const int GRID_COLUMNS = 10;
     }
 }
 -(void)updateCreatures{
-    printf("updateCreatures called --- _gridArray count == [%d] \n",(_gridArray.count));
+    printf("Grid::updateCreatures - called --- _gridArray count == [%d] \n",(_gridArray.count));
     for (int i = 0;i < GRID_ROWS; i++){
-        printf("entered outer loop @[%d]",i);
+        printf("Grid::updateCreatures - entered outer loop @[%d]",i);
         for (int j =0; j < GRID_COLUMNS; j++){
             printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
-            printf("currentCreature.livingNeighbors@ [%d][%d] == [%d] \n",i,j,currentCreature.livingNeighbors);
+            printf("Grid::updateCreatures - currentCreature.livingNeighbors@ [%d][%d] == [%d] \n",i,j,currentCreature.livingNeighbors);
             if ( currentCreature.livingNeighbors == 3){
                 currentCreature.isAlive = true;
-                printf("|||||||||||currentCreature.isAlive set to true \n");
+                printf("Grid::updateCreatures - currentCreature.isAlive set to true \n");
             }
             else if ( currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4){
                 currentCreature.isAlive = false;
-                printf("---------currentCreature.isAlive set to false \n");
+                printf("Grid::updateCreatures - currentCreature.isAlive set to false \n");
             }
         }
     }
