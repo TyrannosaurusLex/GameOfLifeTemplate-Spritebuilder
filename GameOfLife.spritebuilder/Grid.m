@@ -137,6 +137,7 @@ static const int GRID_COLUMNS = 10;
                         printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid\n");
                         if (neighbor.isAlive)
                         {
+                            //neighbor.isAlive doesn't work, but needs to, to meet the above condition
                             currentCreature.livingNeighbors += 1;
                             if(currentCreature.livingNeighbors != 0){
                                 printf("<><><><><><><><><><>currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]\n",x,y,currentCreature.livingNeighbors);
