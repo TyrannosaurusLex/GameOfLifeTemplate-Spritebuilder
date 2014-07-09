@@ -30,7 +30,7 @@ static const int GRID_COLUMNS = 10;
     printf("onEnter Called \n");
     [super onEnter];
     [self setupGrid];
-    printf("_gridArray = [%p]",_gridArray);
+    printf("_gridArray = [%p]\n",_gridArray);
     //accept touches on the grid
     self.userInteractionEnabled = YES;
 }
@@ -40,7 +40,7 @@ static const int GRID_COLUMNS = 10;
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
-    printf("_cellWidth: [%f] --- _cellHeight: [%f]",_cellWidth,_cellHeight);
+    printf("_cellWidth: [%f] --- _cellHeight: [%f]\n",_cellWidth,_cellHeight);
     float x = 0;
     float y = 0;
     
