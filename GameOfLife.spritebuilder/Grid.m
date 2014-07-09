@@ -157,13 +157,17 @@ static const int GRID_COLUMNS = 10;
             printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
             printf("Grid::updateCreatures - currentCreature.livingNeighbors@ [%d][%d] == [%d] \n",i,j,currentCreature.livingNeighbors);
-            if ( currentCreature.livingNeighbors == 3){
-                currentCreature.isAlive = true;
+            if ( currentCreature.isAlive ) {
+                printf("Grid::updateCreatures - currentCreature.isAlive is ALIVE \n");
+                if ( currentCreature.livingNeighbors == 3){
+                    currentCreature.isAlive = true;
                 printf("Grid::updateCreatures - currentCreature.isAlive set to true \n");
-            }
+                }
+            } else {
             else if ( currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4){
                 currentCreature.isAlive = false;
                 printf("Grid::updateCreatures - currentCreature.isAlive set to false \n");
+            }
             }
         }
     }
