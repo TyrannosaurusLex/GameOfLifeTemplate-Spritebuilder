@@ -129,7 +129,7 @@ static const int GRID_COLUMNS = 10;
                     // check that the cell we're checking isn't off the screen
                     BOOL isIndexValid;
                     isIndexValid = [self isIndexValidForX:x andY:y];
-                    printf("isIndexValid: [%b]\n",isIndexValid);
+                    printf("isIndexValid: [%d]\n",isIndexValid);
                     // skip over all cells that are off screen AND the cell that contains the creature we are currently updating
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
