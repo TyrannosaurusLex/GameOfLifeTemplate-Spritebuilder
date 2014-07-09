@@ -30,7 +30,7 @@ static const int GRID_COLUMNS = 10;
     printf("onEnter Called \n");
     [super onEnter];
     [self setupGrid];
-    
+    printf("_gridArray = [%p]",_gridArray);
     //accept touches on the grid
     self.userInteractionEnabled = YES;
 }
@@ -134,7 +134,7 @@ static const int GRID_COLUMNS = 10;
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
-                        printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]",neighbor.isAlive);
+                        printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
                         if (neighbor.isAlive)
                         {
                             //neighbor.isAlive doesn't work, but needs to, to meet the above condition

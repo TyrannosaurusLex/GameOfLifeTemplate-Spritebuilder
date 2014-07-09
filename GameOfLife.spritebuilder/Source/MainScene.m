@@ -49,7 +49,7 @@
 {
     printf(" step called [%d] [%p]\n", seqno, _grid);
     ++seqno;
-    [_grid evolveStep];
+   // [_grid evolveStep];
    // _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
    // _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
 }
