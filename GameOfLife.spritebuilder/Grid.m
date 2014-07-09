@@ -134,7 +134,7 @@ static const int GRID_COLUMNS = 10;
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
-                        printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid\n");
+                        printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]",neighbor.isAlive);
                         if (neighbor.isAlive)
                         {
                             //neighbor.isAlive doesn't work, but needs to, to meet the above condition
