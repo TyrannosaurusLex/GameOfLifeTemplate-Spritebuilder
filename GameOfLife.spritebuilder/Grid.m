@@ -149,14 +149,14 @@ static const int GRID_COLUMNS = 10;
         for (int j =0; j < GRID_COLUMNS; j++){
             printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
-            printf(ANSI_COLOR_RED"currentCreature.livingNeighbors@ [%d][%d] == [%d \n]",i,j,currentCreature.livingNeighbors, ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_RED"currentCreature.livingNeighbors@ [%d][%d] == [%d]",i,j,currentCreature.livingNeighbors, ANSI_COLOR_RESET)"\n";
             if ( currentCreature.livingNeighbors == 3){
                 currentCreature.isAlive = true;
-                printf("currentCreature.isAlive set to true \n");
+                printf(ANSI_COLOR_BLUE"currentCreature.isAlive set to true ",ANSI_COLOR_RESET"\n");
             }
             else if ( currentCreature.livingNeighbors >= 1 || currentCreature.livingNeighbors <= 4){
                 currentCreature.isAlive = false;
-                printf("currentCreature.isAlive set to false \n");
+                printf(ANSI_COLOR_GREEN"currentCreature.isAlive set to false",ANSI_COLOR_RESET "\n");
             }
         }
     }
