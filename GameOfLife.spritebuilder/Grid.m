@@ -134,11 +134,12 @@ static const int GRID_COLUMNS = 10;
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
+                        printf("<><><><><><><><><><><><><><> countNeighbors !((x == i) && (y == j)) && isIndexValid\n");
                         if (neighbor.isAlive)
                         {
                             currentCreature.livingNeighbors += 1;
                             if(currentCreature.livingNeighbors != 0){
-                                printf("<><><><><><><><><><>currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]",x,y,currentCreature.livingNeighbors);
+                                printf("<><><><><><><><><><>currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]\n",x,y,currentCreature.livingNeighbors);
                             }
                         }
                     }
