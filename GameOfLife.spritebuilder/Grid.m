@@ -152,11 +152,11 @@ static const int GRID_COLUMNS = 10;
             printf("currentCreature.livingNeighbors@ [%d][%d] == [%d] \n",i,j,currentCreature.livingNeighbors);
             if ( currentCreature.livingNeighbors == 3){
                 currentCreature.isAlive = true;
-                printf(ANSI_COLOR_BLUE"currentCreature.isAlive set to true " ANSI_COLOR_RESET"\n");
+                printf("|||||||||||currentCreature.isAlive set to true \n");
             }
             else if ( currentCreature.livingNeighbors >= 1 || currentCreature.livingNeighbors <= 4){
                 currentCreature.isAlive = false;
-                printf(ANSI_COLOR_GREEN"currentCreature.isAlive set to false" ANSI_COLOR_RESET "\n");
+                printf("---------currentCreature.isAlive set to false \n");
             }
         }
     }
