@@ -137,7 +137,9 @@ static const int GRID_COLUMNS = 10;
                         if (neighbor.isAlive)
                         {
                             currentCreature.livingNeighbors += 1;
-                            printf("currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]",x,y,currentCreature.livingNeighbors);
+                            if(currentCreature.livingNeighbors != 0){
+                                printf("<><><><><><><><><><>currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]",x,y,currentCreature.livingNeighbors);
+                            }
                         }
                     }
                 }
