@@ -164,7 +164,7 @@ static const int GRID_COLUMNS = 10;
                 printf("Grid::updateCreatures - currentCreature.isAlive set to true \n");
                 }
             } else {
-            else if ( currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4){
+            if ( currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4){
                 currentCreature.isAlive = false;
                 printf("Grid::updateCreatures - currentCreature.isAlive set to false \n");
             }
