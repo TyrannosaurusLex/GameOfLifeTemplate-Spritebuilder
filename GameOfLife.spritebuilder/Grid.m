@@ -156,7 +156,7 @@ static const int GRID_COLUMNS = 10;
         for (int j =0; j < GRID_COLUMNS; j++){
             printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
-            printf("Grid::updateCreatures - currentCreature.livingNeighbors@ [%d][%d] == [%d] [%s]\n",i,j,currentCreature.livingNeighbors, (creature.isAlive?"alive":"not alive"));
+            printf("Grid::updateCreatures - currentCreature.livingNeighbors@ [%d][%d] == [%d] [%s]\n",i,j,currentCreature.livingNeighbors, (currentCreature.isAlive?"alive":"not alive"));
             if ( ! currentCreature.isAlive ) {
                 printf("Grid::updateCreatures - currentCreature.isAlive is NOT alive \n");
                 if ( currentCreature.livingNeighbors == 3){
