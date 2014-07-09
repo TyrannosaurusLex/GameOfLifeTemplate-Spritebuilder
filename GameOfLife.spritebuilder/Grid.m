@@ -48,12 +48,13 @@ static const int GRID_COLUMNS = 10;
     _gridArray = [NSMutableArray array];
     
     // initialize Creatures
-    for (int i = 0; i < GRID_ROWS; i++) {
+    struct foo { unsigned rows; unsigned columns } = { GRID_ROWS, GRID_COLUMNS };
+    for (int i = 0; i < foo.rows; i++) {
         // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
         _gridArray[i] = [NSMutableArray array];
         x = 0;
         
-        for (int j = 0; j < GRID_COLUMNS; j++) {
+        for (int j = 0; j < foo.columns; j++) {
             Creature *creature = [[Creature alloc] initCreature];
             creature.anchorPoint = ccp(0, 0);
             creature.position = ccp(x, y);
