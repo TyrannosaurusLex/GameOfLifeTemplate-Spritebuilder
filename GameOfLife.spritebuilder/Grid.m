@@ -152,7 +152,7 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures{
     printf("Grid::updateCreatures - called --- _gridArray count == [%d] \n",(_gridArray.count));
     for (int i = 0;i < GRID_ROWS; i++){
-        printf("Grid::updateCreatures - entered outer loop @[%d]",i);
+        printf("Grid::updateCreatures - entered outer loop @[%d]\n",i);
         for (int j =0; j < GRID_COLUMNS; j++){
             printf("entered inner loop @[%d]",j);
             Creature *currentCreature = _gridArray[i][j];
@@ -160,13 +160,13 @@ static const int GRID_COLUMNS = 10;
             if ( ! currentCreature.isAlive ) {
                 printf("Grid::updateCreatures - currentCreature.isAlive is NOT alive \n");
                 if ( currentCreature.livingNeighbors == 3){
-                    currentCreature.isAlive = true;
+                    currentCreature setIsAlive:(YES);
                 printf("Grid::updateCreatures - currentCreature.isAlive set to true \n");
                 }
             } else { // creature is alive
                 printf("Grid::updateCreatures - currentCreature.isAlive is alive \n");
                 if ( currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4){
-                    currentCreature.isAlive = false;
+                    currentCreature setIsAlive: (NO);
                     printf("Grid::updateCreatures - currentCreature.isAlive set to false \n");
                 }
             }
