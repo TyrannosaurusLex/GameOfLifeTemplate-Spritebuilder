@@ -110,7 +110,7 @@ static const int GRID_COLUMNS = 10;
         // iterate through all the columns for a given row
         for (int j = 0; j < GRID_COLUMNS; j++)
         {
-            printf("Grid::countNeighbors innerloop at i: [%d] j: [%d]\n",i,j);
+            //printf("Grid::countNeighbors innerloop at i: [%d] j: [%d]\n",i,j);
             // access the creature in the cell that corresponds to the current row/column
             Creature *currentCreature = _gridArray[i][j];
             
@@ -125,22 +125,23 @@ static const int GRID_COLUMNS = 10;
                 // go through the column to the left of the current cell, the column the cell is in, and the column to the right of the current cell
                 for (int y = (j-1); y <= (j+1); y++)
                 {
-                    printf("Grid::countNeighbors inner-innerloop at x: [%d] y: [%d] \n",x,y);
+                    //printf("Grid::countNeighbors inner-innerloop at x: [%d] y: [%d] \n",x,y);
                     // check that the cell we're checking isn't off the screen
                     BOOL isIndexValid;
                     isIndexValid = [self isIndexValidForX:x andY:y];
-                    printf("isIndexValid: [%d]\n",isIndexValid);
+                    //printf("isIndexValid: [%d]\n",isIndexValid);
                     // skip over all cells that are off screen AND the cell that contains the creature we are currently updating
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
-                        printf("Grid::countNeighbors -    !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
+                        printf("Grid::countNeighbors - neighbor[%p], neighbor.isAlive === [%d]",neighbor,neighbor.isAlive);
+                      //  printf("Grid::countNeighbors -    !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
                         if (neighbor.isAlive)
                         {
                             //neighbor.isAlive doesn't work, but needs to, to meet the above condition
                             currentCreature.livingNeighbors += 1;
                             if(currentCreature.livingNeighbors != 0){
-                                printf("Grid::countNeighbrs - currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]\n",x,y,currentCreature.livingNeighbors);
+                                printf("Grid::countNeighbros - currentCreature @ [%d][%d], livingNeighbor += 1:currentValue == [%d]\n",x,y,currentCreature.livingNeighbors);
                             }
                         }
                     }
