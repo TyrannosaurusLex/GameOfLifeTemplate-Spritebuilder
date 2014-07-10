@@ -27,10 +27,10 @@ static const int GRID_COLUMNS = 10;
     float _cellHeight;
 }
 -(void)onEnter{
-    printf("Grid::onEnter Called \n");
+    printf("Grid::onEnter Called - self => [%p] \n", self);
     [super onEnter];
     [self setupGrid];
-    printf("_gridArray = [%p]\n",_gridArray);
+    printf("Grid::onEnter - self => [%p]; _gridArray = [%p]\n", self, _gridArray);
     //accept touches on the grid
     self.userInteractionEnabled = YES;
 }
@@ -134,7 +134,7 @@ static const int GRID_COLUMNS = 10;
 }
 -(void)evolveStep{
     //update each Creature's neighbor count
-    printf("Grid::evolveStep called \n");
+    printf("Grid::evolveStep called - self => [%p]\n", self);
     [self countNeighbors];
     
     //update each Creature's state
@@ -194,7 +194,8 @@ static const int GRID_COLUMNS = 10;
     }
 }
 -(void)updateCreatures{
-    printf("Grid::updateCreatures - called --- _gridArray count == [%d] \n",(_gridArray.count));
+    printf("Grid::updateCreatures - called --- self => [%p]; _gridArray count == [%d] \n",
+           self, (_gridArray.count));
     for (int i = 0;i < GRID_ROWS; i++){
         printf("Grid::updateCreatures - entered outer loop @[%d]\n",i);
         for (int j =0; j < GRID_COLUMNS; j++){
