@@ -134,7 +134,7 @@ static const int GRID_COLUMNS = 10;
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
-                        printf("Grid::countNeighbors - neighbor[%p], neighbor.isAlive === [%d]",neighbor,neighbor.isAlive);
+                        printf("Grid::countNeighbors - neighbor[%p], neighbor.isAlive === [%d]\n",neighbor,neighbor.isAlive);
                       //  printf("Grid::countNeighbors -    !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
                         if (neighbor.isAlive)
                         {
