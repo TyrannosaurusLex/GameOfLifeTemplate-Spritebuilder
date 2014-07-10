@@ -75,8 +75,7 @@ static const int GRID_COLUMNS = 10;
     }
   //  printf("_gridArray count === [%d] --- _gridArray[] count === [%d]",(_gridArray.count), (_gridArray[0].count));
 }
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     //get the x,y coordinates of the touch
     CGPoint touchLocation = [touch locationInNode:self];
     
@@ -86,8 +85,7 @@ static const int GRID_COLUMNS = 10;
     //invert it's state - kill it if it's alive, bring it to life if it's dead.
     creature.isAlive = !creature.isAlive;
 }
-- (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
-{
+- (Creature *)creatureForTouchPosition:(CGPoint)touchPosition {
     //get the row and column that was touched, return the Creature inside the corresponding cell
     int row = touchPosition.y/_cellHeight;
     int column = touchPosition.x/_cellWidth;
@@ -182,8 +180,7 @@ static const int GRID_COLUMNS = 10;
         }
     }
 }
-- (BOOL)isIndexValidForX:(int)x andY:(int)y
-{
+- (BOOL)isIndexValidForX:(int)x andY:(int)y {
     BOOL isIndexValid = YES;
     if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS)
     {
@@ -191,6 +188,7 @@ static const int GRID_COLUMNS = 10;
     }
     return isIndexValid;
 }
+
 //-(void)colorPrintReference{
 //    printf(ANSI_COLOR_RED     "This text is RED!"     ANSI_COLOR_RESET "\n");
 //    printf(ANSI_COLOR_GREEN   "This text is GREEN!"   ANSI_COLOR_RESET "\n");
@@ -199,4 +197,5 @@ static const int GRID_COLUMNS = 10;
 //    printf(ANSI_COLOR_MAGENTA "This text is MAGENTA!" ANSI_COLOR_RESET "\n");
 //    printf(ANSI_COLOR_CYAN    "This text is CYAN!"    ANSI_COLOR_RESET "\n");
 //}
+
 @end
