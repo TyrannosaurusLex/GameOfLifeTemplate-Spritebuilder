@@ -160,13 +160,13 @@ static const int GRID_COLUMNS = 10;
             if ( ! currentCreature.isAlive ) {
                 printf("Grid::updateCreatures - currentCreature.isAlive is NOT alive \n");
                 if ( currentCreature.livingNeighbors == 3){
-                    currentCreature setIsAlive:(YES);
+                    [currentCreature setIsAlive:(YES)];
                 printf("Grid::updateCreatures - currentCreature.isAlive set to true \n");
                 }
             } else { // creature is alive
                 printf("Grid::updateCreatures - currentCreature.isAlive is alive \n");
                 if ( currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4){
-                    currentCreature setIsAlive: (NO);
+                    [currentCreature setIsAlive: (NO)];
                     printf("Grid::updateCreatures - currentCreature.isAlive set to false \n");
                 }
             }
