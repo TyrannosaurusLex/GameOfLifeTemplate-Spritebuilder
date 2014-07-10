@@ -110,7 +110,7 @@ static const int GRID_COLUMNS = 10;
 -(void)countNeighbors{
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
-    printf("Grid::countNeighbors called --- self => [%p]; _gridArray => [%p]; _gridArray.1count == [%d]\n", self, _gridArray, _gridArray.count);
+    printf("Grid::countNeighbors - self => [%p]; _gridArray => [%p]; _gridArray.1count == [%d]\n", self, _gridArray, _gridArray.count);
     for (int i = 0; i < GRID_ROWS; i++)
     {
         NSMutableArray* creatures = _gridArray[i];

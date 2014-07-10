@@ -48,7 +48,7 @@
 // this method will get called every half second when you hit the play button and will stop getting called when you hit the pause button
 - (void)step
 {
-    printf("step called - self => [%p]; seqno => [%d]; _grid => [%p]\n", self, seqno, _grid);
+    printf("MainScene::step called - self => [%p]; seqno => [%d]; _grid => [%p]\n", self, seqno, _grid);
     ++seqno;
     [_grid evolveStep];
    // _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
