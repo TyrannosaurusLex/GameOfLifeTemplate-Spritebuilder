@@ -44,14 +44,14 @@ static const int GRID_COLUMNS = 10;
     float x = 0;
     float y = 0;
     
+    struct { unsigned rows; unsigned columns; } foo = { GRID_ROWS, GRID_COLUMNS };
     // initialize the array as a blank NSMutableArray
-    _gridArray = [NSMutableArray array];
+    _gridArray = [NSMutableArray arrayWithCapacity:foo.rows];
     
     // initialize Creatures
-    struct { unsigned rows; unsigned columns; } foo = { GRID_ROWS, GRID_COLUMNS };
     for (int i = 0; i < foo.rows; i++) {
         // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
-        _gridArray[i] = [NSMutableArray array];
+        _gridArray[i] = [NSMutableArray arrayWithCapacity:foo.columns];
         x = 0;
         
         for (int j = 0; j < foo.columns; j++) {
