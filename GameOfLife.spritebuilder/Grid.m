@@ -36,22 +36,26 @@ static const int GRID_COLUMNS = 10;
 }
 - (void)setupGrid
 {
-    printf("Grid::setupGrid called \n");
+    printf("Grid::setupGrid - called \n");
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
-    printf("_cellWidth: [%f] --- _cellHeight: [%f]\n",_cellWidth,_cellHeight);
+    printf("Grid::setupGrid - _cellWidth: [%f] --- _cellHeight: [%f]\n",_cellWidth,_cellHeight);
     float x = 0;
     float y = 0;
     
     struct { unsigned rows; unsigned columns; } foo = { GRID_ROWS, GRID_COLUMNS };
     // initialize the array as a blank NSMutableArray
     _gridArray = [NSMutableArray arrayWithCapacity:foo.rows];
+    printf("Grid::setupGrid - gridArray => [%p] [%d]\n", _gridArray, [_gridArray count] );
     
     // initialize Creatures
     for (int i = 0; i < foo.rows; i++) {
         // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
-        _gridArray[i] = [NSMutableArray arrayWithCapacity:foo.columns];
+//        _gridArray[i] = [NSMutableArray arrayWithCapacity:foo.columns];
+        NSMutableArray* tmp = [NSMutableArray arrayWithCapacity:foo.columns];
+        _gridArray[i] = tmp;
+        printf("Grid::setupGrid - gridArray => [%p] [%d]\n", tmp, [tmp count] );
         x = 0;
         
         for (int j = 0; j < foo.columns; j++) {
