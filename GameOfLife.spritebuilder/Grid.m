@@ -78,42 +78,6 @@ static const int GRID_COLUMNS = 10;
     }
   //  printf("_gridArray count === [%d] --- _gridArray[] count === [%d]",(_gridArray.count), (_gridArray[0].count));
 }
-//- (void)setupGrid
-//{
-//    // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
-//    _cellWidth = self.contentSize.width / GRID_COLUMNS;
-//    _cellHeight = self.contentSize.height / GRID_ROWS;
-//    
-//    float x = 0;
-//    float y = 0;
-//    
-//    // initialize the array as a blank NSMutableArray
-//    _gridArray = [NSMutableArray array];
-//    
-//    // initialize Creatures
-//    for (int i = 0; i < GRID_ROWS; i++) {
-//        // this is how you create two dimensional arrays in Objective-C. You put arrays into arrays.
-//        _gridArray[i] = [NSMutableArray array];
-//        x = 0;
-//        
-//        for (int j = 0; j < GRID_COLUMNS; j++) {
-//            Creature *creature = [[Creature alloc] initCreature];
-//            creature.anchorPoint = ccp(0, 0);
-//            creature.position = ccp(x, y);
-//            [self addChild:creature];
-//            
-//            // this is shorthand to access an array inside an array
-//            _gridArray[i][j] = creature;
-//            
-//            // make creatures visible to test this method, remove this once we know we have filled the grid properly
-//            //creature.isAlive = YES;
-//            
-//            x+=_cellWidth;
-//        }
-//        
-//        y += _cellHeight;
-//    }
-//}
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     //get the x,y coordinates of the touch
@@ -146,19 +110,22 @@ static const int GRID_COLUMNS = 10;
 -(void)countNeighbors{
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
-    printf("Grid::countNeighbors called --- self => [%p]; _gridArray count == [%d]\n", self, _gridArray.count);
+    printf("Grid::countNeighbors called --- self => [%p]; _gridArray => [%p]; _gridArray.1count == [%d]\n", self, _gridArray, _gridArray.count);
     for (int i = 0; i < GRID_ROWS; i++)
     {
+        NSMutableArray* creatures = _gridArray[i];
+        printf("Grid::countNeighbors - self => [%p]; creatures => [%p]\n", self, creatures );
         // iterate through all the columns for a given row
         for (int j = 0; j < GRID_COLUMNS; j++)
         {
             //printf("Grid::countNeighbors innerloop at i: [%d] j: [%d]\n",i,j);
             // access the creature in the cell that corresponds to the current row/column
-            Creature *currentCreature = _gridArray[i][j];
+            // Creature *currentCreature = _gridArray[i][j];
+            Creature *currentCreature = creatures[j];
             
             // remember that every creature has a 'livingNeighbors' property that we created earlier
             currentCreature.livingNeighbors = 0;
-            printf("Grid::countNeighbors - currentCreature => [%p]; currentCreature.isAlive => [%d]\n", currentCreature,currentCreature.isAlive);
+            printf("Grid::countNeighbors - self => [%p]; creatures => [%p]; creatures[%d]/currentCreature => [%p]; currentCreature.isAlive => [%d]\n", self, creatures, j, currentCreature, currentCreature.isAlive);
            
             // now examine every cell around the current one
             
@@ -177,7 +144,7 @@ static const int GRID_COLUMNS = 10;
                     if (!((x == i) && (y == j)) && isIndexValid)
                     {
                         Creature *neighbor = _gridArray[x][y];
-                        printf("Grid::countNeighbors - neighbor[%p], neighbor.isAlive === [%d]\n",neighbor,neighbor.isAlive);
+                        printf("Grid::countNeighbors - self => [%p]; creatures => [%p]; creatures[%d]/currentCreature => [%p]; neighbor[%p], neighbor.isAlive === [%d]\n", self, creatures, j, currentCreature, neighbor, neighbor.isAlive);
                       //  printf("Grid::countNeighbors -    !((x == i) && (y == j)) && isIndexValid ----- neighbor.isAlive == [%d]\n",neighbor.isAlive);
                         if (neighbor.isAlive)
                         {
