@@ -27,16 +27,15 @@ static const int GRID_COLUMNS = 10;
     float _cellHeight;
 }
 -(void)onEnter{
-    printf("Grid::onEnter Called - self => [%p] \n", self);
+    printf("Grid::onEnter - self => [%p] \n", self);
     [super onEnter];
     [self setupGrid];
     //accept touches on the grid
     self.userInteractionEnabled = YES;
     printf("Grid::onEnter - self => [%p]; DONE; _gridArray = [%p]\n", self, _gridArray);
 }
-- (void)setupGrid
-{
-    printf("Grid::setupGrid - called; self => [%p] \n", self);
+- (void)setupGrid {
+    printf("Grid::setupGrid - self => [%p] \n", self);
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
