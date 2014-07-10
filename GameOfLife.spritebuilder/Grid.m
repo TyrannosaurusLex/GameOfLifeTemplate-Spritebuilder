@@ -116,7 +116,8 @@ static const int GRID_COLUMNS = 10;
             
             // remember that every creature has a 'livingNeighbors' property that we created earlier
             currentCreature.livingNeighbors = 0;
-            
+            printf("Grid::countNeighbors - currentCreature => [%p]; currentCreature.isAlive => [%d]\n", currentCreature,currentCreature.isAlive);
+           
             // now examine every cell around the current one
             
             // go through the row on top of the current cell, the row the cell is in, and the row past the current cell
