@@ -55,7 +55,7 @@ static const int GRID_COLUMNS = 10;
 //        _gridArray[i] = [NSMutableArray arrayWithCapacity:foo.columns];
         NSMutableArray* tmp = [NSMutableArray arrayWithCapacity:foo.columns];
         _gridArray[i] = tmp;
-        printf("Grid::setupGrid - tmp/_gridArray[%d] => [%p] [%d]\n", i, tmp, [tmp count] );
+        printf("Grid::setupGrid - tmp/_gridArray[%d] => [%p] [%d]; _gridArray.count => [%d]\n", i, tmp, [tmp count], [_gridArray count] );
         x = 0;
         
         for (int j = 0; j < foo.columns; j++) {
