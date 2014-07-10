@@ -36,7 +36,7 @@ static const int GRID_COLUMNS = 10;
 }
 - (void)setupGrid
 {
-    printf("Grid::setupGrid - called \n");
+    printf("Grid::setupGrid - called; self => [%p] \n", self);
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
     _cellWidth = self.contentSize.width / GRID_COLUMNS;
     _cellHeight = self.contentSize.height / GRID_ROWS;
@@ -146,7 +146,7 @@ static const int GRID_COLUMNS = 10;
 -(void)countNeighbors{
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
-    printf("Grid::countNeighbors called --- _gridArray count == [%d]\n", _gridArray.count);
+    printf("Grid::countNeighbors called --- self => [%p]; _gridArray count == [%d]\n", self, _gridArray.count);
     for (int i = 0; i < GRID_ROWS; i++)
     {
         // iterate through all the columns for a given row
