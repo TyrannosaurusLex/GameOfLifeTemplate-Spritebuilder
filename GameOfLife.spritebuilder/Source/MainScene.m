@@ -33,13 +33,13 @@
     return self;
 }
 - (void)play {
-    printf("MainScene::play called - self => [%p] \n", self );
+    printf("MainScene::play called - self => [%p]; _grid => [%p]\n", self, _grid );
     //[_grid evolveStep];
     //this tells the game to call a method called 'step' every half second.
     [self schedule:@selector(step) interval:0.5f];
 }
 - (void)pause {
-    printf("MainScene::pause called - self => [%p]\n", self );
+    printf("MainScene::pause called - self => [%p]; _grid => [%p]\n", self, _grid );
     [self unschedule:@selector(step)];
 }
 // this method will get called every half second when you hit the play button and will stop getting called when you hit the pause button
