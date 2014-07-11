@@ -41,7 +41,7 @@ static const int GRID_COLUMNS = 10;
     printf("Grid::setupGrid - self => [%p]; _cellWidth: [%f] --- _cellHeight: [%f]\n",self,_cellWidth,_cellHeight);
     float x = 0;
     float y = 0;
-    
+
     struct { unsigned rows; unsigned columns; } foo = { GRID_ROWS, GRID_COLUMNS };
     // initialize the array as a blank NSMutableArray
     _gridArray = [NSMutableArray arrayWithCapacity:foo.rows];
@@ -64,7 +64,7 @@ static const int GRID_COLUMNS = 10;
             
             // this is shorthand to access an array inside an array
             _gridArray[i][j] = creature;
-            printf("Grid::setupGrid - self => [%p]; creature => [%p]; tmp/_gridArray[%d] => [%p] [%d] [%d]\n", self, creature, i, tmp, [tmp count], [_gridArray count] );
+            //  printf("Grid::setupGrid - self => [%p]; creature => [%p]; tmp/_gridArray[%d] => [%p] [%d] [%d]\n", self, creature, i, tmp, [tmp count], [_gridArray count] );
 
             // make creatures visible to test this method, remove this once we know we have filled the grid properly
             //creature.isAlive = YES;
