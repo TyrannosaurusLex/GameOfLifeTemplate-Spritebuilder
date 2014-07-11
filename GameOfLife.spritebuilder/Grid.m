@@ -166,10 +166,10 @@ static const int GRID_COLUMNS = 10;
 -(void)updateCreatures{
     printf("Grid::updateCreatures - called --- self => [%p]; _gridArray count == [%d] \n",
            self, [_gridArray count]);
-    for (int i = 0;i < GRID_ROWS; i++){
+    for (int i = 0;i < [_gridArray count]; i++){
         NSMutableArray* creatures = _gridArray[i];
         printf("Grid::updateCreatures - entered outer loop @[%d]\n",i);
-        for (int j =0; j < GRID_COLUMNS; j++){
+        for (int j =0; j < [creatures count]; j++){
             printf("Grid::updateCreatures - entered inner loop @[%d]\n",j);
             //  Creature *currentCreature = _gridArray[i][j];
             Creature *currentCreature = creatures[j];
