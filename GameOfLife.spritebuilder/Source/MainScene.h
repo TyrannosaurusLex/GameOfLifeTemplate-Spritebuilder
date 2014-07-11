@@ -7,6 +7,7 @@
 //
 
 #import "CCNode.h"
+#import "Grid.h"
 
 @interface MainScene : CCNode
 @property (nonatomic,assign) Grid* grid;
