@@ -25,6 +25,10 @@ static const int GRID_COLUMNS = 10;
     float _cellWidth;
     float _cellHeight;
 }
+- (id)init {
+    self = [super init];
+    return self;
+}
 -(void)onEnter{
     printf("Grid::onEnter - self => [%p] \n", self);
     [super onEnter];
