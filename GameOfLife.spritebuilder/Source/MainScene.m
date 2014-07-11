@@ -17,7 +17,9 @@
 }
 
 - (id)init {
+    printf( "MainScene::init - self => [%p]\n", self );
     self = [super init];
+    printf( "MainScene::init - self => [%p]\n", self );
     seqno = 0;
     
     if (self) {
