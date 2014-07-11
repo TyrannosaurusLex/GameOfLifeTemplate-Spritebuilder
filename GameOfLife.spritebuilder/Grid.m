@@ -106,12 +106,14 @@ static const int GRID_COLUMNS = 10;
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
     printf("Grid::countNeighbors - self => [%p]; _gridArray => [%p]; _gridArray.1count == [%d]\n", self, _gridArray, _gridArray.count);
-    for (int i = 0; i < GRID_ROWS; i++)
+    //  for (int i = 0; i < GRID_ROWS; i++)
+    for (int i = 0; i < [_gridArray count]; i++)
     {
         NSMutableArray* creatures = _gridArray[i];
         printf("Grid::countNeighbors - self => [%p]; creatures => [%p]\n", self, creatures );
         // iterate through all the columns for a given row
-        for (int j = 0; j < GRID_COLUMNS; j++)
+        //  for (int j = 0; j < GRID_COLUMNS; j++)
+        for (int j = 0; j < [creatures count]; j++)
         {
             //printf("Grid::countNeighbors innerloop at i: [%d] j: [%d]\n",i,j);
             // access the creature in the cell that corresponds to the current row/column
