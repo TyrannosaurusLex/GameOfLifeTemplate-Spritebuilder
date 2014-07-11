@@ -26,7 +26,7 @@ static const int GRID_COLUMNS = 10;
     float _cellHeight;
 }
 - (id)init {
-    printf( "Grid::init - self => [%p]\n", self );
+    printf( "Grid::init - self => [%p]; &_gridArray => [%p] [%p]\n", self, &_gridArray, _gridArray );
     self = [super init];
     printf( "Grid::init - self => [%p]\n", self );
     return self;
