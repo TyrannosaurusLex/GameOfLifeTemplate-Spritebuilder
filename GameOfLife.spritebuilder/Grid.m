@@ -77,7 +77,7 @@ static const int GRID_COLUMNS = 10;
             //  printf("Grid::setupGrid - self => [%p]; creature => [%p]; tmp/_gridArray[%d] => [%p] [%d] [%d]\n", self, creature, i, tmp, [tmp count], [_gridArray count] );
 
             // make creatures visible to test this method, remove this once we know we have filled the grid properly
-            //creature.isAlive = YES;
+            creature.isAlive = YES;
             x+=_cellWidth;
         }
         
