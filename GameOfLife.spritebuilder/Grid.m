@@ -29,9 +29,9 @@ static const int GRID_COLUMNS = 10;
     printf( "Grid::init - self => [%p]; &_gridArray => [%p] [%p]\n", self, &_gridArray, _gridArray );
     self = [super init];
     printf( "Grid::init - self => [%p]\n", self );
-    CCNode* parent = self.parent;
+    MainScene* parent = self.parent;
     printf( "Grid::init - self => [%p]; parent => [%p]\n", self, parent );
-    parent._grid = self;
+    parent.grid = self;
     return self;
 }
 -(void)onEnter{

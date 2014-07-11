@@ -9,6 +9,7 @@
 #import "CCNode.h"
 
 @interface MainScene : CCNode
+@property (nonatomic,assign) Grid* grid
 -(id)init;
 -(void)play;
 -(void)pause;
