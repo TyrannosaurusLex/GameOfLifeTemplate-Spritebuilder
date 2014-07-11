@@ -32,7 +32,7 @@ static const int GRID_COLUMNS = 10;
     printf( "Grid::init - self => [%p]\n", self );
     MainScene* parent =  (MainScene*)[self parent];
     printf( "Grid::init - self => [%p]; parent => [%p]\n", self, parent );
-    parent.grid = self;
+    parent._grid = self;
     return self;
 }
 -(void)onEnter{
