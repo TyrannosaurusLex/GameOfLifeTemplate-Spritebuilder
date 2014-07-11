@@ -25,7 +25,7 @@
     if (self) {
         _timer = [[CCTimer alloc] init];
         // XXX - why did I have to add this?  is this correct?
-        _grid = [[Grid alloc] init];
+      //z  _grid = [[Grid alloc] init];
     }
     printf( "MainScene::init - self => [%p]; _grid => [%p]\n", self, _grid );
     
