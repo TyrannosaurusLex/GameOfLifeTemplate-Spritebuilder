@@ -167,10 +167,12 @@ static const int GRID_COLUMNS = 10;
     printf("Grid::updateCreatures - called --- self => [%p]; _gridArray count == [%d] \n",
            self, [_gridArray count]);
     for (int i = 0;i < GRID_ROWS; i++){
+        NSMutableArray* creatures = _gridArray[i];
         printf("Grid::updateCreatures - entered outer loop @[%d]\n",i);
         for (int j =0; j < GRID_COLUMNS; j++){
             printf("Grid::updateCreatures - entered inner loop @[%d]\n",j);
-            Creature *currentCreature = _gridArray[i][j];
+            //  Creature *currentCreature = _gridArray[i][j];
+            Creature *currentCreature = creatures[j];
             printf("Grid::updateCreatures - currentCreature.livingNeighbors@ [%d][%d] == [%d] [%s]\n",i,j,currentCreature.livingNeighbors, (currentCreature.isAlive?"alive":"not alive"));
             if ( ! currentCreature.isAlive ) {
                 printf("Grid::updateCreatures - currentCreature.isAlive is NOT alive \n");
